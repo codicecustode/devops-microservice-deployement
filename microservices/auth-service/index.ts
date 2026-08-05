@@ -5,8 +5,12 @@ const app = express();
 app.use(express.json());
 
 
-app.get('/', (req, res) => {
+app.get('/auth', (req, res) => {
   res.send('Hello from Auth Service!');
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).send('Auth Service is healthy!');
 });
 
 const PORT = process.env.PORT || 3000;
